@@ -1,0 +1,48 @@
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return """
+    <h1> My Flask Portfolio</h1>
+    <p>Hi, I am Aditya Agarwal. Trying to create Python Projects and getting some hand on Experience</p>
+    <a href='/about'>About</a> |
+    <a href='/projects'>Projects</a> |
+    <a href='/contact'>Contact</a>
+    """
+
+@app.route("/about")
+def about():
+    return """
+    <h1>About Me</h1>
+    <p>I am learning Flask and building small web apps.</p>
+    <a href='/'>Back to Home</a>
+    """
+
+@app.route("/projects")
+def projects():
+    return """
+    <h1>My Projects</h1>
+    <ul>
+        <li>Positivity Checker </li>
+        <li>Basic Calculator </li>
+        <li>ATM System </li>
+        <li>Student Marks Details </li>
+        <li>Text-To-Speech </li>
+        <li>This Flask Portfolio </li>
+    </ul>
+    <a href='/'>Back to Home</a>
+    """
+
+@app.route("/contact")
+def contact():
+    return """
+    <h1>Contact Me</h1>
+    <p>Email: agarwaladitya2704@gmail.com</p>
+    <p>LinkedIn: https://www.linkedin.com/in/aditya-agarwal27/</p>
+    <a href='/'>Back to Home</a>
+    """
+
+if __name__ == "__main__":
+    app.run(debug=True)
