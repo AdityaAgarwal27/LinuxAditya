@@ -1,0 +1,8 @@
+import pywhatkit
+
+# phone number with country code like +91
+pywhatkit.sendwhatmsg("+9193528 00448", 
+                      "Hello, this is an automated WhatsApp message using Python!", 
+                      21, 10)   # Time in 24 hr format: hour, minute
+
+print("WhatsApp message scheduled!")
