@@ -1,0 +1,10 @@
+from twilio.rest import Client
+account_sid = "******"
+auth_token = "*********"
+client = Client(account_sid, auth_token)
+message = client.messages.create(
+    body="Hello, This is Aditya and I sent you an automated SMS...",
+    from_="+*****",  
+    to="+****"     
+)
+print("SMS sent successfully!")
