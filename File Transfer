@@ -1,0 +1,11 @@
+source = input("Enter source file path: ")
+destination = input("Enter destination file path: ")
+
+try:
+    with open(source, "rb") as file1:
+        data = file1.read()
+    with open(destination, "wb") as file2:
+        file2.write(data)
+    print("File transferred successfully!")
+except FileNotFoundError:
+    print(" File not found. Check the path again.")
