@@ -1,0 +1,16 @@
+import smtplib
+import ssl
+from email.message import EmailMessage
+Email = "agarwaladitya2704@gmail.com"
+App_password = "iuza jfkb sson keng"
+Reciever = "darkomegagamingyt@gmail.com"
+msg = EmailMessage()
+msg["From"] = Email
+msg["To"] = Reciever
+msg["Subject"] = "Hello FOR PYTHON ....."
+msg.set_content("This email was shared by python code .....")
+context = ssl.create_default_context()
+with smtplib.SMTP_SSL("smtp.gmail.com",465,context=context) as server:
+    server.login(Email,App_password)
+    server.send_message(msg)
+print("Email has been sent successfully")
