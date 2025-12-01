@@ -1,19 +1,16 @@
-def student_details(**info):
-    print("\n Student Details ")
-    for key, value in info.items():
-        print(f"{key.capitalize()} : {value}")
+print("Welcome to the Movie Ticket Counter!")
 
-def marks(*m):
-    total = sum(m)
-    avg = total / len(m)
-    return total, avg
+age = int(input("Enter your age: "))
 
-grade = lambda avg: "A" if avg >= 90 else ("B" if avg >= 75 else "C")
-subjects = {"Maths", "Science", "English"}  
-student_details(name="Aditya Agarwal", age=19, course="Python Internship")
-total, avg = marks(95, 97, 93)   
-print("\nTotal Marks:", total)
-print("Average Marks:", avg)
-print("Grade:", grade(avg))
+# Check age and decide what movie they can watch and ticket price
+if age < 13:
+    print("You can watch only Kids movies.")
+    print("Ticket price: ₹150")
+elif age >= 13 and age < 18:
+    print("You can watch Kids and PG-13 movies.")
+    print("Ticket price: ₹200")
+else:
+    print("You can watch all movies (Kids, PG-13, and Rated R).")
+    print("Ticket price: ₹250")
 
-print("\nSubjects enrolled:", subjects)
+print("Enjoy your movie! ")
